@@ -1,1 +1,1 @@
-./init.lua
+/Users/crocus/.config/nvim/init.lua
