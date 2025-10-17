@@ -1,8 +1,8 @@
--- link clipboard
-vim.opt.clipboard = "unnamedplus"
-
---install lazy
+-- install lazy
 require("config.lazy")
 
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
+-- default option
+require("config.option")
+
+-- keymap config
+require("config.keybind")
