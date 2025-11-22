@@ -1,3 +1,4 @@
 copy.sh
 karabiner/automatic_backups/*
 replace.sh
+.DS_Store
