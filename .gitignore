@@ -1,2 +1,3 @@
 copy.sh
-./karabiner/automatic_backups/*
+karabiner/automatic_backups/*
+replace.sh
