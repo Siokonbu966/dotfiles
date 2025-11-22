@@ -20,6 +20,10 @@ return {
       git = {
         enable = true,
         ignore = true,
+      },
+      view = {
+        side = "right",
+        width = "170",
       }
     }
   end,
