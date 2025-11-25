@@ -3495,7 +3495,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "7",
+                                        "key_code": "6",
                                         "modifiers": ["right_shift"]
                                     }
                                 ],
