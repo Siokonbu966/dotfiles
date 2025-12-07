@@ -1872,6 +1872,7 @@
                 }
             ],
             "name": "大西配列",
+            "selected": true,
             "simple_modifications": [
                 {
                     "from": { "key_code": "a" },
@@ -3902,7 +3903,6 @@
                 }
             ],
             "name": "大西配列（keychron）",
-            "selected": true,
             "simple_modifications": [
                 {
                     "from": { "key_code": "a" },
