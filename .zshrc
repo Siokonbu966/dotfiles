@@ -112,3 +112,12 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export OLLAMA_HOST=0.0.0.0:11434export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+export PATH=$JAVA_21/bin:$PATH
+export GITHUB_USER=Siokonbu966
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export GIT_EDITOR=nvim\
+export VISUAL=nvim\
+export EDITOR=nvim\
+export ANDROID_HOME=$HOME/Library/Android/sdk && export PATH=$PATH:$ANDROID_HOME/emulator && export PATH=$PATH:$ANDROID_HOME/platform-tools
