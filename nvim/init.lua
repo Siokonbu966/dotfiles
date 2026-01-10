@@ -6,3 +6,6 @@ require("config.option")
 
 -- keymap config
 require("config.keybind")
+
+-- lsp server
+require("config.lsp")
