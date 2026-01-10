@@ -9,7 +9,7 @@
 {
   "icon_theme": "Zed (Default)",
   "terminal": {
-    "font_family": "MesloLGS NF"
+    "font_family": "Hack Nerd Font Mono"
   },
   "base_keymap": "VSCode",
   "autosave": "on_focus_change",
@@ -33,16 +33,30 @@
     "agent": {
     "profiles": {
       "plan": {
+        "default_model": {
+          "provider": "copilot_chat",
+          "model": "claude-haiku-4.5"
+        },
         "name": "plan",
-        "tools": {},
+        "tools": {
+          "thinking": true,
+          "terminal": false,
+          "read_file": true,
+          "list_directory": true,
+          "grep": true,
+          "find_path": true,
+          "fetch": true,
+          "create_directory": false,
+          "copy_path": true
+        },
         "enable_all_context_servers": false,
         "context_servers": {}
       }
     },
-    "default_profile": "write",
+    "default_profile": "plan",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5.1-codex-max"
+      "model": "claude-haiku-4.5"
     },
     "model_parameters": []
   }
