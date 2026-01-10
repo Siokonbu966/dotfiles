@@ -11,3 +11,5 @@ opt.expandtab = true
 -- link clipboard
 opt.clipboard = "unnamedplus"
 
+-- color scheme
+vim.cmd("colorscheme kanagawa")
