@@ -20,9 +20,32 @@ vim.api.nvim_create_autocmd("LspAttach", {
         { buffer = buf, desc = "Show hover documentation" })
     end
 
-  if client:supports_method("textDocument/completion") then
-    vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = false, })
-  end
+    --    if client:supports_method("textDocument/completion") then
+    --      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = false, })
+    --    end
+
+    if client:supports_method('textDocument/completion') then
+      if client.server_capabilities.completionProvider then
+        -- Optional: trigger autocompletion on EVERY keypress. May be slow!
+        local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
+        client.server_capabilities.completionProvider.triggerCharacters = chars
+
+        -- Extend existing trigger characters
+        local existing_chars = client.server_capabilities.completionProvider.triggerCharacters or {}
+        local additional_chars = { '.', ':', '->', '::', '(', '[', '{', ' ' }
+        for _, char in ipairs(additional_chars) do
+          table.insert(existing_chars, char)
+        end
+        client.server_capabilities.completionProvider.triggerCharacters = existing_chars
+      end
+
+      vim.lsp.completion.enable(true, client.id, args.buf, {
+        autotrigger = true,
+        convert = function(item)
+          return { abbr = item.label:gsub('%b()', '') }
+        end,
+      })
+    end
 
     if not client:supports_method("textDocument/willSaveWaitUntil")
         and client:supports_method("textDocument/formatting") then
@@ -35,26 +58,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
-    if client:supports_method("textDocument/inlineCompletion") then
-      vim.lsp.inline_completion.enable(true, { bufnr = buf })
-      vim.keymap.set("i", "<Tab>", function()
-        local inline = vim.lsp.inline_completion.get()
-        if not inline then
-          return "<Tab>"
-        end
+    --    if client:supports_method("textDocument/inlineCompletion") then
+    --     vim.lsp.inline_completion.enable(true, { bufnr = buf })
+    --      vim.keymap.set("i", "<Tab>", function()
+    --        local inline = vim.lsp.inline_completion.get()
+    --        if not inline then
+    --          return "<Tab>"
+    --        end
+    --
+    --        if vim.fn.pumvisible() == 1 then
+    --          return "<C-e>"
+    --        end
 
-        if vim.fn.pumvisible() == 1 then
-          return "<C-e>"
-        end
-        
-        vim.lsp.inline_completion.accept()
-        return ""
-      end, {
-        expr = true,
-        buffer = buf,
-        desc = "Accept the current inline completion",
-      })
-    end
+    --      vim.lsp.inline_completion.accept()
+    --        return ""
+    --      end, {
+    --        expr = true,
+    --        buffer = buf,
+    --        desc = "Accept the current inline completion",
+    --      })
+    --    end
   end,
 })
-

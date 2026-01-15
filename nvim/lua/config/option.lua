@@ -1,7 +1,8 @@
 local opt = vim.opt
 
--- line number
+-- line
 opt.number = true
+opt.wrap = false
 
 -- tab & indent
 opt.autoindent = true
@@ -14,3 +15,4 @@ opt.clipboard = "unnamedplus"
 
 -- color scheme
 vim.cmd("colorscheme kanagawa")
+
