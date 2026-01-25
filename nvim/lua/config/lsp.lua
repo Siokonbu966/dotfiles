@@ -1,14 +1,26 @@
 vim.lsp.enable({
+  -- nvim-lspconfig で"lua_ls"という名前で設定したプリセットが読まれる
+  -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/lua_ls.lua
   "lua_ls",
+  -- 他の言語サーバーの設定
   "ts_ls",
   "eslint",
+  -- "gopls",
 })
 
+-- 補完オプション
+vim.opt.completeopt = { "menu", "menuone", "noinsert" }
+
+-- 言語サーバーがアタッチされた時に呼ばれる
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("my.lsp", {}),
   callback = function(args)
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
     local buf = args.buf
+
+    -- デフォルトで設定されている言語サーバー用キーバインドに設定を追加する
+    -- See https://neovim.io/doc/user/lsp.html#lsp-defaults
+    -- 言語サーバーのクライアントがLSPで定められた機能を実装していたら設定を追加するという流れ
 
     if client:supports_method("textDocument/definition") then
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = buf, desc = "Go to definition" })
@@ -20,37 +32,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
         { buffer = buf, desc = "Show hover documentation" })
     end
 
-    --    if client:supports_method("textDocument/completion") then
-    --      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = false, })
-    --    end
-
-    if client:supports_method('textDocument/completion') then
-      if client.server_capabilities.completionProvider then
-        -- Optional: trigger autocompletion on EVERY keypress. May be slow!
-        local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
-        client.server_capabilities.completionProvider.triggerCharacters = chars
-
-        -- Extend existing trigger characters
-        local existing_chars = client.server_capabilities.completionProvider.triggerCharacters or {}
-        local additional_chars = { '.', ':', '->', '::', '(', '[', '{', ' ' }
-        for _, char in ipairs(additional_chars) do
-          table.insert(existing_chars, char)
-        end
-        client.server_capabilities.completionProvider.triggerCharacters = existing_chars
-      end
-
-      vim.lsp.completion.enable(true, client.id, args.buf, {
-        autotrigger = true,
-        convert = function(item)
-          return { abbr = item.label:gsub('%b()', '') }
-        end,
-      })
+    if client:supports_method("textDocument/completion") then
+      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
     end
 
+    -- Auto-format ("lint") on save.
+    -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
     if not client:supports_method("textDocument/willSaveWaitUntil")
         and client:supports_method("textDocument/formatting") then
       vim.api.nvim_create_autocmd("BufWritePre", {
-        group = vim.api.nvim_create_augroup("my.lsp", { clear = true }),
+        group = vim.api.nvim_create_augroup("my.lsp", { clear = false }),
         buffer = args.buf,
         callback = function()
           vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
@@ -58,25 +49,21 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
-    --    if client:supports_method("textDocument/inlineCompletion") then
-    --     vim.lsp.inline_completion.enable(true, { bufnr = buf })
-    --      vim.keymap.set("i", "<Tab>", function()
-    --        local inline = vim.lsp.inline_completion.get()
-    --        if not inline then
-    --          return "<Tab>"
-    --        end
-    --
-    --        if vim.fn.pumvisible() == 1 then
-    --          return "<C-e>"
-    --        end
-
-    --      vim.lsp.inline_completion.accept()
-    --        return ""
-    --      end, {
-    --        expr = true,
-    --        buffer = buf,
-    --        desc = "Accept the current inline completion",
-    --      })
-    --    end
+    if client:supports_method("textDocument/inlineCompletion") then
+      vim.lsp.inline_completion.enable(true, { bufnr = buf })
+      vim.keymap.set("i", "<Tab>", function()
+        if not vim.lsp.inline_completion.get() then
+          return "<Tab>"
+        end
+        -- close the completion popup if it's open
+        if vim.fn.pumvisible() == 1 then
+          return "<C-e>"
+        end
+      end, {
+        expr = true,
+        buffer = buf,
+        desc = "Accept the current inline completion",
+      })
+    end
   end,
 })

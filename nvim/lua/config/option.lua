@@ -11,8 +11,7 @@ opt.shiftwidth = 2
 opt.expandtab = true
 
 -- link clipboard
-opt.clipboard = "unnamedplus"
+-- opt.clipboard = "unnamedplus"
 
 -- color scheme
 vim.cmd("colorscheme kanagawa")
-
