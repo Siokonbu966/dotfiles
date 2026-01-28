@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 -- line
-opt.number = true
+opt.relativenumber = true
 opt.wrap = false
 
 -- tab & indent

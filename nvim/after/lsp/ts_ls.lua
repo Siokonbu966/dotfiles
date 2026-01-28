@@ -1,4 +1,7 @@
 --@type vim.lsp.Config
 return {
-  cmd = { 'true' },
+  settings = {
+    workingDirectory = { mode = "auto" },
+    cmd = { 'true' },
+  },
 }

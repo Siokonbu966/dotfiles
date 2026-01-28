@@ -8,6 +8,11 @@ vim.lsp.enable({
   -- "gopls",
 })
 
+-- show error message
+vim.diagnostic.config({
+  virtual_text = true
+})
+
 -- 補完オプション
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 
