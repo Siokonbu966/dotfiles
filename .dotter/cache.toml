@@ -1,0 +1,23 @@
+[symlinks]
+"nvim\\after\\lsp\\eslint.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\after\\lsp\\eslint.lua"
+"nvim\\after\\lsp\\lua_ls.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\after\\lsp\\lua_ls.lua"
+"nvim\\after\\lsp\\ts_ls.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\after\\lsp\\ts_ls.lua"
+"nvim\\init.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\init.lua"
+"nvim\\lua\\config\\diagnostic.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\config\\diagnostic.lua"
+"nvim\\lua\\config\\keybind.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\config\\keybind.lua"
+"nvim\\lua\\config\\lazy.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\config\\lazy.lua"
+"nvim\\lua\\config\\lsp.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\config\\lsp.lua"
+"nvim\\lua\\config\\option.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\config\\option.lua"
+"nvim\\lua\\plugins\\bufferline.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\bufferline.lua"
+"nvim\\lua\\plugins\\coding-diffview.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\coding-diffview.lua"
+"nvim\\lua\\plugins\\coding-indent.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\coding-indent.lua"
+"nvim\\lua\\plugins\\gitsigns.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\gitsigns.lua"
+"nvim\\lua\\plugins\\kanagawa.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\kanagawa.lua"
+"nvim\\lua\\plugins\\lspconfig.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\lspconfig.lua"
+"nvim\\lua\\plugins\\lualine.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\lualine.lua"
+"nvim\\lua\\plugins\\mason-nvim.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\mason-nvim.lua"
+"nvim\\lua\\plugins\\nvim-tree.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\nvim-tree.lua"
+"nvim\\lua\\plugins\\telescope.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\telescope.lua"
+"nvim\\lua\\plugins\\tokyonight.lua" = "C:\\Users\\Crocus/AppData/local/nvim\\lua\\plugins\\tokyonight.lua"
+
+[templates]
