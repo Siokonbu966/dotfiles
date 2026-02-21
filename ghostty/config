@@ -1,7 +1,7 @@
 font-family = "MesloLGL Nerd Font"
 font-size = 13
 
-background-opacity = 0.8
+background-opacity = 0.9
 window-decoration = server
 
 # appicon
