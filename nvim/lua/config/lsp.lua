@@ -1,11 +1,7 @@
 vim.lsp.enable({
-  -- nvim-lspconfig で"lua_ls"という名前で設定したプリセットが読まれる
-  -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/lua_ls.lua
   "lua_ls",
-  -- 他の言語サーバーの設定
   "ts_ls",
   "eslint",
-  -- "gopls",
 })
 
 -- show error message
@@ -16,16 +12,13 @@ vim.diagnostic.config({
 -- 補完オプション
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
 
--- 言語サーバーがアタッチされた時に呼ばれる
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("my.lsp", {}),
   callback = function(args)
     local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
     local buf = args.buf
 
-    -- デフォルトで設定されている言語サーバー用キーバインドに設定を追加する
-    -- See https://neovim.io/doc/user/lsp.html#lsp-defaults
-    -- 言語サーバーのクライアントがLSPで定められた機能を実装していたら設定を追加するという流れ
+    vim.api.nvim_buf_set_option(buf, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
     if client:supports_method("textDocument/definition") then
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = buf, desc = "Go to definition" })
@@ -41,8 +34,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
     end
 
-    -- Auto-format ("lint") on save.
-    -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
     if not client:supports_method("textDocument/willSaveWaitUntil")
         and client:supports_method("textDocument/formatting") then
       vim.api.nvim_create_autocmd("BufWritePre", {

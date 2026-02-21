@@ -1,0 +1,21 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+# "copy.sh" = ""
+# fastfetch = ""
+# ghostty = ""
+# karabiner = ""
+# kitty = ""
+nvim = "~/AppData/local/nvim"
+# "replace.sh" = ""
+# sketchybar = ""
+# wezterm = ""
+# zed = ""
+
+[default.variables]
+
+[settings]
+default_target_type = "symbolic"
