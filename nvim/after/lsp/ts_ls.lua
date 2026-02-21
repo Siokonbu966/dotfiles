@@ -2,6 +2,5 @@
 return {
   settings = {
     workingDirectory = { mode = "auto" },
-    cmd = { 'true' },
   },
 }

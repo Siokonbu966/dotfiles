@@ -8,5 +8,5 @@ return {
   end,
   -- keybind
   vim.keymap.set("n", "<C-k>", "<cmd>bprev<CR>"),
-  vim.keymap.set("n", "<C-h>", "<cmd>bnext<CR>"),
+  vim.keymap.set("n", "<C-s>", "<cmd>bnext<CR>"),
 }
