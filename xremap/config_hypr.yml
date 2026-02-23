@@ -1,0 +1,112 @@
+virtual_modifiers:
+  - Insert # Layer 1 Spaceの代わり
+  - ScrollLock # Layer 2 Henkanの代わり
+
+modmap:
+  - name: default
+    remap: 
+      Shift_L: z
+      a: e
+      z: x
+      w: l
+      s: i
+      x: c
+      e: u
+      d: a
+      c: v
+      r: f
+      f: o
+      v: Comma
+      g: Minus
+      j: k
+      m: g
+      i: w
+      k: t
+      Comma: d
+      o: r
+      p: y
+      l: n
+      Semicolon: s
+      Slash: j
+      Apostrophe: h
+      Shift_R: b
+      Dot: m
+      Enter: p
+      CapsLock: q
+      
+      # 特殊キー
+      Alt_L: Enter
+      # Muhenkan: Alt_R
+      # Alt_R: Shift_L
+      b: Ctrl_L
+      n: Alt_R
+      h: Shift_L
+
+  - name: global
+    remap:
+      Space:
+        held: Insert
+        alone: Backspace
+        free_hold: true
+      Alt_R:
+        held: ScrollLock
+        alone: Space
+        free_hold: true
+      
+keymap:
+  - name: L1
+    remap:
+      Insert-z: SHIFT-4  # $
+      Insert-e: '0'
+      Insert-x: '7'
+      Insert-l: '1'
+      Insert-i: '4'
+      Insert-c: '8'
+      Insert-u: '2'
+      Insert-a: '5'
+      Insert-v: '9'
+      Insert-f: '3'
+      Insert-o: '6'
+      Insert-Comma: Dot          # . 
+      Insert-k: Shift-6          # ^
+      Insert-g: Shift-Minus      # _
+      Insert-w: Shift-Comma      # <
+      Insert-t: Shift-Equal      # +
+      Insert-d: Shift-1          # ! 
+      Insert-r: Equal            # =
+      Insert-n: Minus            # -
+      Insert-m: Shift-Slash      # ?  
+      Insert-y: Shift-dot        # >
+      Insert-s: Kpasterisk       # *
+      Insert-j: Shift-Semicolon  # ;
+      Insert-b: Semicolon        # :
+      Insert-h: Slash            # /
+      Insert-p: Shift-5          # %
+      Insert-q: Shift-Grave      # ~
+
+  - name: L2
+    remap:
+      ScrollLock-z: Yen                 # $ 
+      ScrollLock-e: Shift-3             # #
+      ScrollLock-x: Shift-LeftBrace     # {
+      ScrollLock-l: LeftBrace           # [
+      ScrollLock-i: Shift-9             # (
+      ScrollLock-c: Grave               # `
+      ScrollLock-u: Shift-Apostrophe    # "
+      ScrollLock-a: Apostrophe          # '
+      ScrollLock-v: Shift-RightBrace    # }
+      ScrollLock-f: RightBrace          # ]
+      ScrollLock-o: Shift-0             # )
+      ScrollLock-q: Shift-2             # @
+      ScrollLock-Comma: Shift-BackSlash # |
+      ScrollLock-Minus: Shift-7         # &
+      ScrollLock-k: VolumeUp
+      ScrollLock-g: VolumeDown
+      ScrollLock-w: Esc
+      ScrollLock-t: Left
+      ScrollLock-r: Up
+      ScrollLock-n: Down
+      ScrollLock-s: Right
+      ScrollLock-h: Insert
+      ScrollLock-b: ScrollLock
+
