@@ -1907,6 +1907,10 @@
                     "to": [{ "key_code": "o" }]
                 },
                 {
+                    "from": { "key_code": "f10" },
+                    "to": [{ "consumer_key_code": "mute" }]
+                },
+                {
                     "from": { "key_code": "g" },
                     "to": [{ "key_code": "hyphen" }]
                 },
@@ -2011,8 +2015,12 @@
                     "to": [{ "key_code": "x" }]
                 },
                 {
-                    "from": { "key_code": "f10" },
-                    "to": [{ "consumer_key_code": "mute" }]
+                    "from": { "key_code": "t" },
+                    "to": [{ "key_code": "keypad_plus" }]
+                },
+                {
+                    "from": { "key_code": "u" },
+                    "to": [{ "key_code": "f15" }]
                 }
             ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
