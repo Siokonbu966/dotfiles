@@ -1,0 +1,53 @@
+Usage: xremap [OPTIONS] [CONFIGS]...
+
+Arguments:
+  [CONFIGS]...
+          Config file(s)
+          
+          When more than one file is given, then will modmap, keymap and virtual_modifiers from the subsequent files be merged into the first configuration file.
+
+Options:
+      --device <DEVICE>
+          Limit input devices to the given names or paths. Default is all keyboards
+
+      --ignore <IGNORE>
+          Ignore input devices with the given names or paths
+
+      --mouse
+          Listen to mouse devices. Default is false
+
+      --watch[=<WATCH>...]
+          Watch for new devices or changing configuration files.
+          Default is not watching for either.
+          Examples
+          - xremap --watch config.yml               # watch devices
+          - xremap --watch=config config.yml        # watch configuration files
+          - xremap --watch=config,device config.yml # watch both
+
+          Possible values:
+          - device: add new devices automatically
+          - config: reload the config automatically
+
+      --output-device-name <OUTPUT_DEVICE_NAME>
+          Choose the name of the created output device. Default is 'xremap' or 'xremap pid=xx'
+
+      --vendor <VENDOR>
+          Choose the vendor value of the created output device. Default is: 0x1234
+
+      --product <PRODUCT>
+          Choose the product value of the created output device. Default is: 0x5678
+
+      --completions <SHELL>
+          Generate shell completions
+          
+          You can use them by storing in your shells completion file or by running
+          - in bash: eval "$(xremap --completions bash)"
+          - in fish: xremap --completions fish | source
+          
+          [possible values: bash, elvish, fish, powershell, zsh]
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+  -V, --version
+          Print version
