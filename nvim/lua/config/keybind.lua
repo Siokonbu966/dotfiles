@@ -7,3 +7,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 
 -- lsp
 vim.keymap.set('i', '<F15>', '<C-x><C-o>')
+
+-- bufferline
+vim.keymap.set('n', '<C-k>', '<cmd>bprev<CR>', { desc = 'move previous tab' })
+vim.keymap.set('n', '<C-s>', '<cmd>bnext<CR>', { desc = 'move next tab' })

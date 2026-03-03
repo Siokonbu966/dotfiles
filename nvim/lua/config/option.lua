@@ -10,6 +10,8 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 
+opt.conceallevel = 2
+
 -- link clipboard
 opt.clipboard = "unnamedplus"
 
