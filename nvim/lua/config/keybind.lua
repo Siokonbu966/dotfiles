@@ -7,3 +7,4 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 
 -- lsp
 vim.keymap.set('i', '<F15>', '<C-x><C-o>')
+vim.keymap.set('i', '<F17>', '<C-x><C-o>')
