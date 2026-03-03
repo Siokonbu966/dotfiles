@@ -20,7 +20,6 @@ export EDITOR=nvim
 
 # alias
 alias r='cd $(ghq root)/$(ghq list | fzf)'
-alias dot='cd $HOME/.dotfiles'
 
 # import local conf
 if [ -f ~/.zshrc.local ]; then
