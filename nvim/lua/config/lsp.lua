@@ -1,3 +1,4 @@
+--[[
 vim.lsp.enable({
   "lua_ls",
   "ts_ls",
@@ -63,3 +64,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+]]
