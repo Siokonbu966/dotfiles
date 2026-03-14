@@ -1,4 +1,3 @@
---[[
 vim.lsp.enable({
   "lua_ls",
   "ts_ls",
@@ -12,7 +11,7 @@ vim.diagnostic.config({
 
 -- 補完オプション
 vim.opt.completeopt = { "menu", "menuone", "noinsert" }
-
+--[[
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("my.lsp", {}),
   callback = function(args)
