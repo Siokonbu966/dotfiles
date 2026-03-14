@@ -6,6 +6,7 @@ opt.wrap = false
 
 -- tab & indent
 opt.autoindent = true
+opt.smartindent = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
@@ -17,4 +18,3 @@ opt.clipboard = "unnamedplus"
 
 -- color scheme
 vim.cmd("colorscheme kanagawa")
-
