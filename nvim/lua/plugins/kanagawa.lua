@@ -1,4 +1,4 @@
-return{
+return {
   "rebelot/kanagawa.nvim",  
   lazy = false, -- スタートアップ時に読み込む  
   priority = 1000, -- 他のスタートプラグインより先に読み込む  
