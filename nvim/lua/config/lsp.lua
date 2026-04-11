@@ -2,6 +2,9 @@ vim.lsp.enable({
   "lua_ls",
   "ts_ls",
   "eslint",
+  "gh-actions-language-server",
+  "gitlab-ci-ls",
+  "yaml-language-server",
 })
 
 -- show error message

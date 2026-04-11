@@ -10,8 +10,9 @@ opt.smartindent = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
+opt.softtabstop = -1
 
-opt.conceallevel = 2
+opt.conceallevel = 0
 
 -- link clipboard
 opt.clipboard = "unnamedplus"

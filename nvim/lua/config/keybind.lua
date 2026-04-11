@@ -5,10 +5,6 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live gr
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
--- lsp
-vim.keymap.set('i', '<F15>', '<C-x><C-o>')
-vim.keymap.set('i', '<F17>', '<C-x><C-o>')
-
 -- bufferline
 vim.keymap.set('n', '<C-k>', '<cmd>bprev<CR>', { desc = 'move previous tab' })
 vim.keymap.set('n', '<C-s>', '<cmd>bnext<CR>', { desc = 'move next tab' })

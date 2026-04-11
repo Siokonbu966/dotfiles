@@ -11,7 +11,7 @@ vim.diagnostic.handlers["my/notify"] = {
     vim.notify(msg, level)
   end,
 }
--- Users can configure the handler
+
 vim.diagnostic.config({
   ["my/notify"] = {
     log_level = vim.log.levels.INFO,
