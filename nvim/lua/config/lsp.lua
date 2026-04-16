@@ -1,10 +1,11 @@
 vim.lsp.enable({
+  "clangd",
+  "cssls",
+  "html",
   "lua_ls",
+  "marksman",
+  "nil_ls",
   "ts_ls",
-  "eslint",
-  "gh-actions-language-server",
-  "gitlab-ci-ls",
-  "yaml-language-server",
 })
 
 -- show error message
