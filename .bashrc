@@ -10,5 +10,9 @@ if [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh ]; 
   source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 fi
 
+if [ -f ${pkgs.git}/share/bash-completion/completions/git-prompt.sh]; then
+  source ${pkgs.git}/share/bash-completion/completions/git-prompt.sh
+fi
+
 # プロンプト
 PS1="${BLUE}<\t>${GREEN}\u@\h${RESET}: ${BLUE}\w${RESET} ${YELLOW}\$(__git_ps1 '(%s)')${RESET}\n${WHITE}\$ ${RESET}"
