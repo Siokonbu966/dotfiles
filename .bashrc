@@ -10,8 +10,11 @@ if [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh ]; 
   source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 fi
 
-if [ -f ${pkgs.git}/share/bash-completion/completions/git-prompt.sh]; then
-  source ${pkgs.git}/share/bash-completion/completions/git-prompt.sh
+_git_bin="$(command -v git 2>/dev/null)"
+
+if [ -n "$_git_bin" ]; then
+  _git_prefix="$(cd "$(dirname "$_git_bin")/.." && pwd)"
+  source $_git_prefix/share/bash-completion/completions/git-prompt.sh
 fi
 
 # プロンプト
