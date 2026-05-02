@@ -18,4 +18,4 @@ if [ -n "$_git_bin" ]; then
 fi
 
 # プロンプト
-PS1="${BLUE}<\t>${GREEN}\u@\h${RESET}: ${BLUE}\w${RESET} ${YELLOW}\$(__git_ps1 '(%s)')${RESET}\n${WHITE}\$ ${RESET}"
+PS1="${BLUE}<\t>${GREEN}\u@\h${RESET}: ${BLUE}\w${RESET} ${YELLOW} \$(__git_ps1 '(%s)')${RESET}\n${WHITE}\$ ${RESET}"
