@@ -1,6 +1,6 @@
 # 色定義
 GREEN="\[\e[32m\]"
-BLUE="\[\e[34m\]"
+BLUE="\[\e[1;34m\]"
 WHITE="\[\e[37m\]"
 YELLOW="\[\e[33m\]"
 CYAN="\[\e[36m\]"
