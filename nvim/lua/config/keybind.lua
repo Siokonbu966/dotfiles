@@ -8,3 +8,4 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help ta
 -- bufferline
 vim.keymap.set('n', '<C-k>', '<cmd>bprev<CR>', { desc = 'move previous tab' })
 vim.keymap.set('n', '<C-s>', '<cmd>bnext<CR>', { desc = 'move next tab' })
+vim.keymap.set('n', 'tc', '<cmd>bdelete! %d<CR>', { desc = 'close current buffer'})
