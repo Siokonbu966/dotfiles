@@ -1,8 +1,9 @@
 # 色定義
 GREEN="\[\e[32m\]"
-BLUE="\[\e[34m\]"
+BLUE="\[\e[1;34m\]"
 WHITE="\[\e[37m\]"
 YELLOW="\[\e[33m\]"
+CYAN="\[\e[36m\]"
 RESET="\[\e[0m\]"
 
 # git branch取得（git-prompt.shを読み込む）
@@ -17,5 +18,15 @@ if [ -n "$_git_bin" ]; then
   source $_git_prefix/share/bash-completion/completions/git-prompt.sh
 fi
 
+git_ps1_or_x() {
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    local out
+    out=" $(__git_ps1 '(%s)')"
+    if [ -n "$out" ]; then
+      printf '%s' "$out"
+    fi
+  fi
+}
+
 # プロンプト
-PS1="${BLUE}<\t>${GREEN}\u@\h${RESET}: ${BLUE}\w${RESET} ${YELLOW}\$(__git_ps1 '(%s)')${RESET}\n${WHITE}\$ ${RESET}"
+PS1="${WHITE}<\t>${GREEN}\u@\h${RESET}: ${CYAN} \w${RESET} ${BLUE}\$(git_ps1_or_x)${RESET}\n${WHITE}\$ ${RESET}"
